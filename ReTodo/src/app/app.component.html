@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="content" style="text-align: center">
+  <h1>Todo List</h1>
+  <h4>Enter text into the input field to add items to your list.</h4>
+  <h4>Click the item to mark it as complete.</h4>
+  <h4>Click the "X" to remove the item from your list.</h4>
+  <app-input (NameTodo)= "AddTodo($event)" ></app-input>
+  <div style="text-align: left" id="fix" >
+     
+      <app-list [listTodo]="listTodo" (Remove)="DeleteTodo($event) " (Complete)="CompleteTodo($event) " ></app-list>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

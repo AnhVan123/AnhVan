@@ -1,0 +1,5 @@
+<p [ngClass]="{back: item.status == true}">
+  Name : {{item.name}} |
+  <button (click)="ReturnIdStatusToList(item.id)">Complete: </button> {{item.status}} |
+  <button [ngClass]="{color: true}" (click) = "ReturnIdDeleteToList(item.id)" >X</button>
+</p>

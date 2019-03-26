@@ -1,0 +1,3 @@
+<ul *ngFor="let todo of listTodo" > 
+  <app-item (Delete) = "ReturnIdRemoveToApp($event)" (Status) = "ReturnIdCompleteToApp($event)" [item]="todo" ></app-item>
+</ul>
