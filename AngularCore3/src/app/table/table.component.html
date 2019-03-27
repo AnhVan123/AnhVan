@@ -1,0 +1,42 @@
+
+<div class="container" >
+  <div>
+      <select #choose (change)= "Change(choose)"   > 
+          <option value="id">ID</option> 
+          <option value="firstName">First Name</option> 
+          <option value="lastName">Last Name</option> 
+          <option value="email">Email</option> 
+          <option value="birthday">BirthDay</option> 
+          <option value="salary">Salary</option> 
+        </select>
+  </div>
+    
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>BirthDay</th>
+            <th>Salary</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listEmployee | orderBy:text : false : false" >
+            <td>{{item.id}} </td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.birthday | date: 'dd/MM/yyyy'}}</td>
+            <td>{{item.salary}}</td>
+            <td>{{item.phone | pipePhone }}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>
