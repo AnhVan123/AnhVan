@@ -1,3 +1,17 @@
-<p>
-  table-message-detail works!
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th value="sender" >Sender</th>
+      <th value="subject">Subject</th>
+      <th value="date">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listEmail" [routerLink]="['/listMessage', {outlets: {message: [item._id]}}]" (click)="selectItem(item._id)" [ngClass]="{'selected-item': selectedItem === item._id}">
+      <td>{{item.from | slice: 0: 40}}</td>
+      <td>{{item.subject}}</td>
+      <td>{{item.date | date: 'dd-MM-yyyy'}}</td>
+    </tr>
+   
+  </tbody>
+</table>

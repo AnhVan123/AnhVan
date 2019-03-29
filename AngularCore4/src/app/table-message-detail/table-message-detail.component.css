@@ -1,0 +1,8 @@
+div.scroll {
+    overflow: auto;
+}
+
+.selected-item {
+    background-color: blue;
+    color: white;
+}

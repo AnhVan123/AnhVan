@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="nav-bar-left">
+    <ul>
+      <li class="fas fa-folder">
+        <a routerLink="inbox" (click)="GetField(inbox)" #inbox
+          >&ensp; &ensp; inbox</a
+        >
+      </li>
+      <li class="fas fa-folder">
+        <a routerLink="finance" (click)="GetField(finance)" #finance
+          >&ensp; &ensp; finance</a
+        >
+      </li>
+      <li class="fas fa-folder">
+        <a routerLink="travel" (click)="GetField(travel)" #travel
+          >&ensp; &ensp; travel</a
+        >
+      </li>
+      <li class="fas fa-folder">
+        <a routerLink="personal" (click)="GetField(personal)" #personal
+          >&ensp; &ensp; personal</a
+        >
+      </li>
+      <li class="fas fa-folder">
+        <a routerLink="spam" (click)="GetField(spam)" #spam
+          >&ensp; &ensp; spam</a
+        >
+      </li>
+      <li class="fas fa-folder">
+        <a routerLink="drafts" (click)="GetField(drafts)" #drafts
+          >&ensp; &ensp; drafts</a
+        >
+      </li>
+      <li class="fas fa-folder">
+        <a routerLink="sent" (click)="GetField(sent)" #sent
+          >&ensp; &ensp; sent</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div>
+  <router-outlet name="message"></router-outlet>
+</div>

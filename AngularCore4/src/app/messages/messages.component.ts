@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EmailService } from '../email.service';
+import { Email } from '../model/mail';
 
 @Component({
   selector: 'app-messages',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor() { }
+  email: Email;
+  constructor(
+    private router: ActivatedRoute,
+    private messageService: EmailService
+  ) { }
 
   ngOnInit() {
+    this.getMessage();
   }
 
+  getMessage() {
+    return this.router.params.subscribe(param => {
+      this.email = this.messageService.getMessageById(param.id);
+    });
+  }
 }
