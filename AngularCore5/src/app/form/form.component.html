@@ -1,0 +1,114 @@
+
+<form formGroupName = "formTest" (ngSubmit)="onSubmit()" > 
+  
+        <table id="table1" >
+            <tr>
+                <td> <span style="color: red" > * </span> Name: </td>
+                <td> <input  formControlName="name" type="text"></td>
+              </tr>
+              <tr>
+                <td> <span style="color: red"> * </span>Email:</td>
+                <td> <input  formControlName="email"  type="text"></td>
+              </tr>
+              <tr>
+                  <td> <span style="color: red"> * </span>Age:</td>
+                  <td> <input  formControlName="age"  type="text"> </td>
+              </tr>
+        </table>
+        <p *ngIf="name.errors.required" > Name is required.</p>
+        <br>
+        <table id= "table2" >
+         
+          <tr>
+               <td>
+                  Which option best describes your current role?  
+               </td>
+               <td>
+                 <select name="" id="">
+                  <option value="">Student</option>
+                  <option value="">Full time job</option>
+                  <option value="">Full time learner</option>
+                  <option value="">Prefer not to say</option>
+                  <option value="">Other</option>
+            
+                </select>
+               </td>
+           </tr>
+           <br>
+          <tr>
+              <td>  <span style="color: red"> * </span> How likely is that you would recommend </td>
+              <td> <input name="camp" type="radio">Definitely </td>
+          </tr>
+          <tr>
+              <td>freeCodeCamp to a friend?</td>
+              <td> <input name="camp" type="radio">Maybe</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="camp" type="radio">Not sure</td>
+          </tr>
+          <br>
+          <tr>
+              <td>What do you like most in FCC:</td>
+              <td>
+                  <select name="" id="">
+                      <option value="">Challenges</option>
+                      <option value="">Projects</option>
+                      <option value="">Community</option>
+                      <option value="">Open Source</option>
+                
+                    </select>
+              </td>
+          </tr>
+          <br>
+          <tr>
+              <td>Things that should be improved in the future</td>
+              <td> <input name="" type="checkbox">Front-end Projects </td>
+          </tr>
+          <tr>
+              <td>(Check all that apply):</td>
+              <td> <input name="" type="checkbox">Back-end Projects </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Data Visualization </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Challenges </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Open Source Community </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Gitter help rooms </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox"> Videos</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">City Meetups </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Wiki </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Forum </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> <input name="" type="checkbox">Additional Courses </td>
+          </tr>
+          <tr>
+              <td> Additional Courses </td>
+              <td> <textarea name="" id="" cols="40" rows="8"></textarea></td>
+          </tr>
+        </table>
+        <button type="submit">Submit</button>
+</form>

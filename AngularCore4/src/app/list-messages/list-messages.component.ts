@@ -13,6 +13,4 @@ export class ListMessagesComponent implements OnInit {
   ngOnInit() {
   }
 
-  GetField(name) {
-  }
 }
