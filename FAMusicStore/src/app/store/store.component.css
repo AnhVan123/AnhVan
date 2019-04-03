@@ -1,0 +1,37 @@
+#search{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 3%;
+    height: 35px;
+}
+
+#album{
+    height: 600px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    overflow: scroll;
+    background: #ebebe0;
+}
+
+.display{
+    width: 230px;
+    margin-left: 2%;
+    height: 280px;
+    float: left;
+    display: block;
+    border: solid black 1px;
+    margin-top: 2%;
+    
+}
+.image{
+ width: 230px;
+ height: 200px;
+}
+#infor{
+    height: 200px;
+    background: gray;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
