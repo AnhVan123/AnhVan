@@ -1,13 +1,25 @@
 <div id = "content" >
-    <input  id="search" placeholder="Enter name video">
+    <input (keyup.enter) = " getVideo($event)"  id="search" placeholder="Enter name video">
     <div id= "album" >
   
-      <div >
-       
+      <div class="list" *ngFor="let item of listData" (click)="getDetail(item.id.videoId)"  >
+        <img [src]="item.snippet.thumbnails.medium.url" alt="">
+        <div class="des" >
+            <h3> {{item.snippet.title}}</h3>
+            Channer: {{item.snippet.channelTitle}}
+            <br>
+            Date publish:  {{item.snippet.publishedAt | date: 'dd/MM/yyy' }}
+            <br>
+            {{item.snippet.description}}
+        </div>
+      
+     
       </div>
        
     </div>
     <div  id="infor">
+        <iframe width="800" height="445"  src="">
+        </iframe>
         
     </div>
   </div>

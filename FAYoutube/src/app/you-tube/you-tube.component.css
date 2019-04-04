@@ -6,25 +6,22 @@
 }
 
 #album{
-    height: 600px;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 5%;
+    height: 450px;
+    margin-left: 5%;
+    width: 100%;
+    margin-top: 3%;
     overflow: scroll;
     background: #ebebe0;
 }
-
-.display{
-    width: 230px;
-    margin-left: 2%;
-    height: 320px;
-    float: left;
-    display: block;
-    border: solid black 1px;
-    margin-top: 2%;
-    background:  white;
-    margin-bottom: 2%;
-    
+.des{
+    height: 180px;
+    width: 70%;
+    float: right;
+    padding-top: 0%;
+    margin-right: 5%;
+}
+.list{
+    padding-bottom: 3%;
 }
 .image{
  width: 230px;
@@ -37,8 +34,4 @@
     width: 60%;
     margin-left: 20%;
     margin-top: 5%;
-}
-
-#content{
-    background:  #d9d9f2;
 }
