@@ -24,7 +24,6 @@ export class StoreComponent implements OnInit {
       console.log(this.listData);
     });
     event.target.value = '';
-    this.listsong = [];
     this.lengthListSong = 0;
   }
 

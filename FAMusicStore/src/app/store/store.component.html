@@ -6,7 +6,11 @@
         <div class="display" (click)="onClick(item?.id )" >
             <img class="image"  src="{{item?.images[1]?.url}} " alt="">
             <h5>  {{item.name}}</h5>
-            
+            <p> popularity: {{item.popularity}}
+              <br>
+              Type: {{item.type}}
+            </p>
+             
         </div>
       </div>
      

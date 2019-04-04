@@ -10,7 +10,7 @@ export class InterceptorService implements HttpInterceptor {
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // tslint:disable-next-line:max-line-length
-    const artist = req.clone({setHeaders: { Authorization: `Authorization: Bearer  BQDjNWcc3UWfQdr0aZc2K_GOUk7BC9N2KekpmdMfKj2sXd7HKQDeNZREiBYaBoIqTByxMoiA7ggClG-AV7tUo2KZi8AiVzz039iu1y4dJBJLPB7Y_HpZAm-MRXQLwQMXCMeH7bNEX4aarFJpyuvgRP_9qnLYYm7kgkY1VM3btxFhIyk6uj7oUtqI9GuoIUJCkb180Pc4pBvMNA915f7c0_ErEsdMc0TaGpLiaw` }});
+    const artist = req.clone({setHeaders: { Authorization: `Authorization: Bearer  BQBoCsajK6jr7zc58fBWJADzwvXf8qahwrzrUziEBI2y_GFivmNI1jQ9zZMbKivTHoBMawOZ5x7UtjsstvCSY-zVkuVZ7_u9xL7_2GBsnov_0AysmqxA3DuxETXE3SDL_z6zmDk0g2LwmfgQral2p_eYLl2-AJwz09fEZvYeFwzdE5Jsvm0kwXuSroG_NCn-ag0-9EEdoqg9ZbmNzMHy_x5aEi706U9wuosmIA` }});
     return next.handle(artist);
   }
 }
