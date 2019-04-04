@@ -22,16 +22,23 @@
     display: block;
     border: solid black 1px;
     margin-top: 2%;
+    background:  white;
+    margin-bottom: 2%;
     
 }
 .image{
  width: 230px;
  height: 200px;
+ margin-bottom: 2%;
 }
 #infor{
-    height: 200px;
+    height: auto;
     background: gray;
     width: 60%;
     margin-left: 20%;
     margin-top: 5%;
+}
+
+#content{
+    background:  #d9d9f2;
 }
