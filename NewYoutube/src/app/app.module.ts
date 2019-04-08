@@ -1,24 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { YouTubeComponent } from './you-tube/you-tube.component';
+import { ListVideoComponent } from './list-video/list-video.component';
+import { VideoDetailComponent } from './video-detail/video-detail.component';
+import { ListRelateComponent } from './list-relate/list-relate.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    YouTubeComponent,
-    DetailComponent,
+    ListVideoComponent,
+    VideoDetailComponent,
+    ListRelateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+     NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

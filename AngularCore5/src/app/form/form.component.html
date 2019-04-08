@@ -1,21 +1,57 @@
 
-<form formGroupName = "formTest" (ngSubmit)="onSubmit()" > 
-  
+<div id= "content" >
+    <h1>Survey Form</h1>
+    <form id="form" [formGroup] = "formTest" (ngSubmit)="onSubmit()" > 
+        <p>Let us know how we can improve freeCodeCamp</p>
         <table id="table1" >
             <tr>
                 <td> <span style="color: red" > * </span> Name: </td>
-                <td> <input  formControlName="name" type="text"></td>
+                <td> <input  formControlName="name" type="text">
+                     <div
+                        class="error-input"
+                        *ngIf="
+                            formTest.controls.name.invalid &&
+                            (formTest.controls.name.touched)"
+                    >
+                        <div *ngIf="formTest.controls.name.errors.required">
+                            Name is required.
+                        </div>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td> <span style="color: red"> * </span>Email:</td>
-                <td> <input  formControlName="email"  type="text"></td>
+                <td> <input  formControlName="email"  type="text">
+                    <div
+                        class="error-input"
+                        *ngIf="
+                            formTest.controls.email.invalid &&
+                            (   formTest.controls.email.dirty ||
+                                formTest.controls.email.touched)"
+                        >
+                        <div *ngIf="formTest.controls.email.errors.required">
+                            Email is required.
+                        </div>
+                    </div>
+                </td>
               </tr>
               <tr>
                   <td> <span style="color: red"> * </span>Age:</td>
-                  <td> <input  formControlName="age"  type="text"> </td>
+                  <td> <input  formControlName="age"  type="number">
+                    <div
+                        class="error-input"
+                        *ngIf="
+                        formTest.controls.age.invalid &&
+                        (formTest.controls.age.touched)"
+                        >
+                        <div *ngIf="formTest.controls.age.errors.required">
+                        Age is required.
+                        </div>
+                  </div>
+                 </td>
               </tr>
         </table>
-        <p *ngIf="name.errors.required" > Name is required.</p>
+      
         <br>
         <table id= "table2" >
          
@@ -37,22 +73,32 @@
            <br>
           <tr>
               <td>  <span style="color: red"> * </span> How likely is that you would recommend </td>
-              <td> <input name="camp" type="radio">Definitely </td>
+              <td> <input  formControlName="camp" type="radio" value="Definitely">Definitely </td>
           </tr>
           <tr>
               <td>freeCodeCamp to a friend?</td>
-              <td> <input name="camp" type="radio">Maybe</td>
+              <td> <input  formControlName="camp" type="radio" value="Maybe">Maybe</td>
           </tr>
           <tr>
               <td></td>
-              <td> <input name="camp" type="radio">Not sure</td>
+              <td> <input  formControlName="camp" type="radio" value="Not sure">Not sure
+                <div
+                     class="error-input"
+                    *ngIf="
+                    formTest.controls.camp.invalid 
+                    ">
+                    <div *ngIf="formTest.controls.camp.errors.required">
+                            FreeCodeCamp  is required.
+                    </div>
+              </div>
+            </td>
           </tr>
           <br>
           <tr>
               <td>What do you like most in FCC:</td>
               <td>
                   <select name="" id="">
-                      <option value="">Challenges</option>
+                     <option value="">Challenges</option>
                       <option value="">Projects</option>
                       <option value="">Community</option>
                       <option value="">Open Source</option>
@@ -110,5 +156,12 @@
               <td> <textarea name="" id="" cols="40" rows="8"></textarea></td>
           </tr>
         </table>
-        <button type="submit">Submit</button>
+        <input id= "button" class="btn btn-primary"
+        [ngClass]="{ 'btn-submit': true, 'btn-hover': formTest.valid }"
+        type="submit"
+        value="Submit"
+        [disabled]="!formTest.valid"
+        >
 </form>
+
+</div>

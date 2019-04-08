@@ -1,8 +1,27 @@
 <div id = "content" >
+   
     <input (keyup.enter) = " getVideo($event)"  id="search" placeholder="Enter name video">
-    <div id= "album" >
+    <div id="detail" >
+        <div  id="infor" >
+            <iframe width="800" height="445"  [src]="">
+            </iframe>
+            
+          </div>
+        <div id="related" >
+            <div *ngFor="let item of listRelated" >
+                <img [src]="item.snippet.thumbnails.default.url" alt="">
+                <div class="des" >
+                    <h4> {{item.snippet.title}}</h4>
+                    Channer: {{item.snippet.channelTitle}}
+                  
+                </div>
+            </div>
+         </div> 
+    </div>
+    
+    <div id= "album">
   
-      <div class="list" *ngFor="let item of listData" (click)="getDetail(item.id.videoId)"  >
+      <div class="list" *ngFor="let item of listData  | paginate: { itemsPerPage: 10, currentPage: p }" (click)="getDetail(item.id.videoId)" (click)="related(item.id.videoId)"   >
         <img [src]="item.snippet.thumbnails.medium.url" alt="">
         <div class="des" >
             <h3> {{item.snippet.title}}</h3>
@@ -15,11 +34,7 @@
       
      
       </div>
-       
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
-    <div  id="infor">
-        <iframe width="800" height="445"  src="">
-        </iframe>
-        
-    </div>
+   
   </div>

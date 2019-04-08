@@ -6,11 +6,10 @@
 }
 
 #album{
-    height: 450px;
+    height: auto;
     margin-left: 5%;
     width: 100%;
     margin-top: 3%;
-    overflow: scroll;
     background: #ebebe0;
 }
 .des{
@@ -35,17 +34,4 @@
     margin-left: 2%;
     margin-top: 5%;
     float: left;
-}
-#related{
-    margin-top: 5%;
-    height: 445px;
-    width: 35%;
-    float: left;
-    overflow: scroll;
-}
-
-#detail{
-    height: 530px;
-    width: 100%;
-    
 }

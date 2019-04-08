@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Button } from 'protractor';
 
 @Component({
   selector: 'app-form',
@@ -7,17 +8,19 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  [x: string]: any;
   formTest: FormGroup;
+  submited = false;
   constructor() { }
   ngOnInit() {
 this.formTest = new FormGroup({
-  name : new FormControl(''),
-  email : new FormControl(''),
-  age : new FormControl(''),
-
+  name : new FormControl('', [Validators.required]) ,
+  email : new FormControl('', [Validators.required, Validators.email]) ,
+  age : new FormControl('', [Validators.required, Validators.min(6)]),
+  camp : new FormControl('', [Validators.required])
 });
+console.log(this.formTest);
   }
   onSubmit() {
-    console.log(this.formTest);
   }
 }

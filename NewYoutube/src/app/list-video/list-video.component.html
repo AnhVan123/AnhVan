@@ -1,0 +1,31 @@
+<div id = "content" >
+   
+  <input (keyup.enter) = " getVideo($event)"  id="search" placeholder="Enter name video">
+  
+  <div id= "album">
+  
+        <div class="list" *ngFor="let item of listData  
+        | paginate: { itemsPerPage: 10, currentPage: p }" 
+        (click)="getDetail(item.id.videoId)" 
+        (click)="related(item.id.videoId)"   >
+          <a [routerLink] ="item.id.videoId" >
+            
+           <img [src]="item.snippet.thumbnails.medium.url" alt="">
+          </a>
+          <div class="des" >
+              <h3> {{item.snippet.title}}</h3>
+              Channer: {{item.snippet.channelTitle}}
+              <br>
+              Date publish:  {{item.snippet.publishedAt | date: 'dd/MM/yyy' }}
+              <br>
+              {{item.snippet.description}}
+          </div>
+        
+       
+        </div>
+ 
+ 
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+ 
+</div>
